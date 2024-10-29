@@ -1,6 +1,11 @@
 #include <stdio>
+#define TAILLE 9
+typedef struct deplacement {
+    int x;
+    int y;
+} Position;
 
-int barrière () {
+int barriere (int barriers[TAILLE][TAILLE][TAILLE][TAILLE] = {0}) {
     if (barriers[verif.x][verif.y][position.x][position.y] == 1) {
         printf (" Deplacement impossible, veuillez saisir de nouvelles coordonées");
         scanf("[%d] [%d]" , &Position );

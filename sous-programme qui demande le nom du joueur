@@ -15,3 +15,45 @@ if (NombreJoueurs == 1 ) { // avec NombreJoueurs ma sous-fonction
   }
   return 0;
   }
+
+
+int NombreJoueurs (){
+    int a;
+    printf("Choisissez le nombre de joueurs : \n 1. 2 joueurs \n 2. 4 joueurs" );
+    scanf ("%d", &a);
+
+    if (a==1){
+        printf ("Partie à 2 joueurs");
+        return 2;
+    } else if (a==2){
+        printf ("Partie à 4 joueurs");
+        return 4;
+    } else {
+        printf ("Choix invalide. Veuillez choisir une option correcte");
+        scanf ("%d", &a);
+    }
+    return 0;
+}
+
+int main (){
+    char Nom1, Nom2, Nom3, Nom4;
+    int nbJoueurs= NombreJoueurs();
+    if (nbJoueurs== 1 ) {
+        printf ("Saisissez le nom du joueur 1");
+        scanf ("%c", &Nom1);
+        printf ("Saisissez le nom du joueur 2");
+        scanf ("%c", &Nom2);
+        }
+     if (nbJoueurs== 2 ) {
+         printf ("Saisissez le nom du joueur 1");
+         scanf ("%c", &Nom1);
+        printf ("Saisissez le nom du joueur 2");
+        scanf ("%c", &Nom2);
+        printf ("Saisissez le nom du joueur 3");
+        scanf ("%c", &Nom3);
+        printf ("Saisissez le nom du joueur 4");
+        scanf ("%c", &Nom4);
+        }
+
+    return 0;
+}

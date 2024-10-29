@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int NombreJoueurs (int a) {
+printf("Choisissez le nombre de joueurs : \n 1. 2 joueurs \n 2. 4 joueurs" );
+scanf ("%d", &a);
+
+if (a==1){
+  printf ("Partie à 2 joueurs");
+} else if (a==2){
+  printf ("Partie à 4 joueurs");
+} else {
+  printf ("Choix invalide. Veuillez choisir une option correcte");
+  scanf ("%d", &a);
+}
+return 0; 
+}

@@ -1,0 +1,39 @@
+#include <stdio.h>
+int main() {
+    int choix, jeua2, jeua4;
+    printf("Choisissez le mode de jeu:\n");
+    printf("1. 2 Joueur\n");
+    printf("2. 4 Joueur\n");
+    scanf("%d", &choix);
+    if (choix==1){
+        printf("2 Joueurs\n");
+        printf("Choisissez le mode de jeu pour 2 joueurs :\n");
+        printf("1. avec une intelligence artificielle\n");
+        printf("2. avec un Joueur\n");
+        scanf("%d", &jeua2);
+    }
+    else if (choix==2){
+        printf("4 Joueurs\n");
+        printf("Choisissez le mode de jeu pour 4 joueurs :\n");
+        printf("1. avec 3 intelligence artificielle\n");
+        printf("2. avec 2 intelligence artificielle et 1 Joueur\n");
+        printf("3. avec 1 intelligence artificielle et 2 Joueur\n");
+        printf("4. avec 3 Joueur\n");
+        scanf("%d", &jeua4);
+    }
+        printf("le jeu est :\n");
+        if (choix==1&&jeua2==1){
+            printf("a 2 avec une intelligence artificielle\n");
+        } else if (choix==1&&jeua2==2){
+            printf("a 2 avec un Joueur\n");
+        } else if (choix==2&&jeua4==1){
+            printf("a 4 avec 3 intelligence artificielle\n");
+        } else if (choix==2&&jeua4==2){
+            printf("a 4 avec 2 intelligence artificielle et 1 Joueur\n");
+        } else if (choix == 2&&jeua4==3){
+            printf("a 4 avec 1 intelligence artificielle et 2 Joueur\n");
+        } else if (choix==2&&jeua4==4){
+            printf("a 4 avec 3 Joueur\n");
+        }
+        return 0;
+    }

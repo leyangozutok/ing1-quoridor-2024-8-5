@@ -36,7 +36,7 @@ int main (){
 
 int NombreJoueurs (){
     int a;
-    printf("Choisissez le nombre de joueurs : \n 1. 2 joueurs \n 2. 4 joueurs" );
+    printf("Choisissez le nombre de joueurs : \n 1. 2 joueurs \n 2. 4 joueurs \n" );
     scanf ("%d", &a);
 
     if (a==1){

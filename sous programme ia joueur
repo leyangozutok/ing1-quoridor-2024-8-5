@@ -30,7 +30,7 @@ int main() {
             printf("a 4 avec 3 intelligence artificielle\n");
         } else if (choix==2&&jeua4==2){
             printf("a 4 avec 2 intelligence artificielle et 1 Joueur\n");
-        } else if (choix == 2&&jeua4==3){
+        } else if (choix==2&&jeua4==3){
             printf("a 4 avec 1 intelligence artificielle et 2 Joueur\n");
         } else if (choix==2&&jeua4==4){
             printf("a 4 avec 3 Joueur\n");

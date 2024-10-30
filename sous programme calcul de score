@@ -1,0 +1,22 @@
+#include <stdio.h>
+int calculscoreT(int scores[], int taille){
+    int total=0;
+    for (int i=0; i<taille; i++){
+        total+=scores[i];
+    }
+    return total;
+}
+int main(){
+    int nbdescores;
+    printf("Ecrire le nombre de scores:");
+    scanf("%d", &nbdescores);
+    int scores[nbdescores];
+    printf("Ecrire les scores:");
+    for (int i=0; i<nbdescores; i++){
+        printf("Score %d:",i+1);
+        scanf("%d",&scores[i]);
+    }
+    int total=calculscoreT(scores, nbdescores);
+    printf("Le score total est: %d\n",total);
+    return 0;
+}

@@ -1,5 +1,5 @@
 #include <stdio.h>
-int main() {
+int main(){
     int choix, jeua2, jeua4;
     printf("Choisissez le mode de jeu:\n");
     printf("1. 2 Joueur\n");

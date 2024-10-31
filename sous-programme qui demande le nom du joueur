@@ -73,10 +73,14 @@ int main (){
         scanf ("%s", Nom4);
 
         }
-    printf("Les joueurs sont :\n");
-    printf("Joueur 1 : %s\n", Nom1);
-    printf("Joueur 2 : %s\n", Nom2);
-    if (nbJoueurs == 4) {
+    if (nbJoueurs == 2) 
+        printf("Les joueurs sont :\n");
+        printf("Joueur 1 : %s\n", Nom1);
+        printf("Joueur 2 : %s\n", Nom2);
+    if (nbJoueurs == 4) { 
+        printf("Les joueurs sont :\n");
+        printf("Joueur 1 : %s\n", Nom1);
+        printf("Joueur 2 : %s\n", Nom2);
         printf("Joueur 3 : %s\n", Nom3);
         printf("Joueur 4 : %s\n", Nom4);
     }

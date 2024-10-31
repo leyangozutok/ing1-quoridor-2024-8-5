@@ -1,0 +1,119 @@
+#include <stdio.h>
+
+#define TAILLE 9
+
+
+
+
+/// code a modifier en fonction de la matrice !!!!!
+typedef struct deplacement {
+    int x;
+    int y;
+} Position ;
+
+
+
+
+
+//// tableau-matrice pour présenter les barrières (a faire en fonction de la matrice du jeu)
+int plateau[TAILLE][TAILLE][TAILLE][TAILLE];
+
+
+
+
+// on a les coordonnées du pion du joueur et les coordonnées du pion de l'adversaire
+Position positionpion = {0, 5};
+Position positionadversaire = {5, 5};
+
+
+
+
+int verification(Position a, Position b) {
+    plateau[a.x][a.y][b.x][b.y] = 1 ;
+    plateau[b.x][b.y][a.x][a.y] = 1;
+    // on vérifie s'il y a une barrière et comme une barriere occupe deux positions alors on test ca pour deux positions
+    if (a.x < 0 || a.x >= TAILLE || a.y < 0 || a.y >= TAILLE) {// on pose les limites du plateau
+        return false;
+    } // ici on verifie que ça ne sort pas du plateau
+    if (plateau[b.x][b.y][b.x][b.y] == 1) {//on vérifie s'il y a une barriere
+        return false;
+    } //ici on verifie qu'il n'y a pas de barrière
+
+    return true;
+}
+
+
+
+
+
+
+void mouvement(Position positionpion, Position positionadversaire, char direction) {
+
+    Position nouvelleposition = positionpion;
+
+
+    switch (direction) {
+        case 'h': nouvelleposition.x -= 1;
+        break;
+        case 'b': nouvelleposition.x += 1;
+        break;
+        case 'g': nouvelleposition.y -= 1;
+        break;
+        case 'd': nouvelleposition.y += 1;
+        break;
+        default:
+        break;
+    }
+
+  if (nouvelleposition.x == positionadversaire.x && nouvelleposition.y == positionadversaire.y) {
+      Position saut = nouvelleposition;
+          switch (direction) {
+              case 'h': saut.x -= 1;
+              break;
+              case 'b': saut.x += 1;
+              break;
+              case 'g': saut.y -= 1;
+              break;
+              case 'd': saut.y += 1;
+              break;
+              default:
+                  return;
+          }
+      if (verification(saut, nouvelleposition)) {
+          nouvelleposition = saut;
+      }
+
+  } else if (!verification(positionpion, nouvelleposition)) {
+    printf("Déplacement impossible : barrière ou bord du plateau.\n");
+  }
+
+      positionpion = nouvelleposition;
+      printf("Votre pion a été déplacé vers (%d, %d)\n", positionpion.x, positionpion.y);
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+int main(void)
+{
+    char directiondupion;
+    printf("La position actuelle de votre pion est : (%d, %d)\n", positionpion.x, positionpion.y);
+    printf("votre adversaire se trouve : (%d, %d)\n", positionadversaire.x, positionadversaire.y);
+    while ( directiondupion != 'h' && directiondupion != 'g' && directiondupion != 'd' && directiondupion != 'b' ) {
+        printf("Saisissez la direction \n'h' pour haut\n'd' pour droite\n'b' pour bas\n'g' pour gauche\nvotre choix : ");
+        scanf(" %c", &directiondupion );
+    }
+    mouvement(positionpion, positionadversaire, directiondupion);
+
+    return 0;
+}
+

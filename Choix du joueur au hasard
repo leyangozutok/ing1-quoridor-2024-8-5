@@ -1,0 +1,61 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int NombreJoueurs() {
+    int a;
+    printf("Choisissez le nombre de joueurs : \n 1. 2 joueurs \n 2. 4 joueurs \n");
+    scanf("%d", &a);
+
+    if (a == 1) {
+        printf("Partie à 2 joueurs\n");
+        return 2;
+    } else if (a == 2) {
+        printf("Partie à 4 joueurs\n");
+        return 4;
+    } else {
+        printf("Choix invalide. Veuillez choisir une option correcte");
+        scanf("%d", &a);
+    }
+    return 0;
+}
+
+int main() {
+    srand(time(NULL));
+    char Nom1[20], Nom2[20], Nom3[20], Nom4[20];
+    int nbJoueurs = NombreJoueurs();
+    if (nbJoueurs == 2) {
+        printf("Saisissez le nom du joueur 1 :\n");
+        scanf("%s", Nom1);
+        printf("Saisissez le nom du joueur 2 :\n");
+        scanf("%s", Nom2);
+    } else if (nbJoueurs == 4) {
+        printf("Saisissez le nom du joueur 1 :\n");
+        scanf("%s", Nom1);
+        printf("Saisissez le nom du joueur 2 :\n");
+        scanf("%s", Nom2);
+        printf("Saisissez le nom du joueur 3 :\n");
+        scanf("%s", Nom3);
+        printf("Saisissez le nom du joueur 4 :\n");
+        scanf("%s", Nom4);
+    }
+    if (nbJoueurs == 2) {
+        printf("Les joueurs sont :\n");
+        printf("Joueur 1 : %s\n", Nom1);
+        printf("Joueur 2 : %s\n", Nom2);
+        const char *partie_avec_2[2] = {Nom1, Nom2};
+        int joueur_qui_commence = rand() % nbJoueurs;
+        printf("Le joueur choisi qui va commencer est : %s", partie_avec_2[joueur_qui_commence]);
+    }
+    if (nbJoueurs == 4) {
+        printf("Les joueurs sont :\n");
+        printf("Joueur 1 : %s\n", Nom1);
+        printf("Joueur 2 : %s\n", Nom2);
+        printf("Joueur 3 : %s\n", Nom3);
+        printf("Joueur 4 : %s\n", Nom4);
+        const char *partie_avec_4[4] = {Nom1, Nom2, Nom3, Nom4};
+        int joueur_qui_commence = rand() % nbJoueurs;
+        printf("Le joueur choisi qui va commencer est : %s", partie_avec_4[joueur_qui_commence]);
+    }
+}
+

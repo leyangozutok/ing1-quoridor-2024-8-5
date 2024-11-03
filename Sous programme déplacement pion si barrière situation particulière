@@ -71,3 +71,43 @@ int main(void)
     mouvement(positionpion, positionadversaire, directiondupion);
     return 0;
 }
+
+
+
+Début
+
+Si (nouvelleposition == positionadversaire)
+Position saut = nouvelleposition
+	Si (direction = h) 
+		saut.x = saut.x – 1
+	Sinon si (direction = b) 
+		saut.x = saut.x + 1
+Sinon si (direction = g)
+saut.y = saut.y - 1
+Sinon si (direction = d) 
+saut.y = saut.y + 1
+Fin sinon Si
+Si (plateau[saut.x][saut.y] == 1) 
+Si (direction = h ou direction = b)
+Si (plateau[nouvelleposition.x][nouvelleposition.y - 1] == 0 )
+nouvelleposition.y = nouvelleposition.y - 1 
+                Sinon si (plateau[nouvelleposition.x][nouvelleposition.y + 1] == 0) 
+nouvelleposition.y = nouvelleposition.y + 1 
+                Fin Sinon Si	
+Sinon si (direction = g ou direction = d) 
+Si (plateau[nouvelleposition.x - 1][nouvelleposition.y] == 0)
+nouvelleposition.x = nouvelleposition.x - 1 
+Sinon si (plateau[nouvelleposition.x + 1][nouvelleposition.y] == 0)
+nouvelleposition.x = nouvelleposition.x + 1 
+Fin Sinon Si
+Fin Si
+Sinon
+nouvelleposition = saut
+Fin Sinon Si
+Sinon si (plateau[nouvelleposition.x][nouvelleposition.y] == 1 || nouvelleposition est hors limites)
+Ecrire (« Déplacement impossible, il y a une barrière ou c'est le bord du plateau »)
+	Fin Sinon Si
+positionpion = nouvelleposition
+Ecrire (« Votre pion a été déplacé vers », Position nouvelleposition)
+Fin
+

@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int NombreJoueurs (int a) {
-printf("Choisissez le nombre de joueurs : \n 1. 2 joueurs \n 2. 4 joueurs" );
+printf("Choisissez le nombre de joueurs (Tapez 1 ou 2) : \n 1. 2 joueurs \n 2. 4 joueurs" );
 scanf ("%d", &a);
 
 if (a==1){

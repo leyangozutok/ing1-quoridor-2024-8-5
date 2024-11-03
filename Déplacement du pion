@@ -5,7 +5,7 @@
 
 
 
-/// code a modifier en fonction de la matrice !!!!!
+
 typedef struct deplacement {
     int x;
     int y;
@@ -21,7 +21,6 @@ int plateau[TAILLE][TAILLE][TAILLE][TAILLE];
 
 
 
-// on a les coordonnées du pion du joueur et les coordonnées du pion de l'adversaire
 Position positionpion = {0, 5};
 Position positionadversaire = {5, 5};
 
@@ -31,13 +30,13 @@ Position positionadversaire = {5, 5};
 int verification(Position a, Position b) {
     plateau[a.x][a.y][b.x][b.y] = 1 ;
     plateau[b.x][b.y][a.x][a.y] = 1;
-    // on vérifie s'il y a une barrière et comme une barriere occupe deux positions alors on test ca pour deux positions
-    if (a.x < 0 || a.x >= TAILLE || a.y < 0 || a.y >= TAILLE) {// on pose les limites du plateau
+ 
+    if (a.x < 0 || a.x >= TAILLE || a.y < 0 || a.y >= TAILLE) {
         return false;
-    } // ici on verifie que ça ne sort pas du plateau
-    if (plateau[b.x][b.y][b.x][b.y] == 1) {//on vérifie s'il y a une barriere
+    } 
+    if (plateau[b.x][b.y][b.x][b.y] == 1) {
         return false;
-    } //ici on verifie qu'il n'y a pas de barrière
+    } 
 
     return true;
 }
